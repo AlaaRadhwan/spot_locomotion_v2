@@ -1,0 +1,164 @@
+Loaded model: /home/alaa-radhwan/Projects/spot_locomotion_v2/src/spot_locomotion_v2/robot/mjcf/reference/spot.xml
+model.nbody: 14
+model.njnt: 13
+model.nq: 19
+model.nv: 18
+model.nu: 12
+model.ngeom: 31
+model.nkey: 1
+
+Joints: 
+ 0 | freejoint  | type=free    | qpos= 0 | qvel= 0
+ 1 | fl_hx      | type=hinge   | qpos= 7 | qvel= 6
+ 2 | fl_hy      | type=hinge   | qpos= 8 | qvel= 7
+ 3 | fl_kn      | type=hinge   | qpos= 9 | qvel= 8
+ 4 | fr_hx      | type=hinge   | qpos=10 | qvel= 9
+ 5 | fr_hy      | type=hinge   | qpos=11 | qvel=10
+ 6 | fr_kn      | type=hinge   | qpos=12 | qvel=11
+ 7 | hl_hx      | type=hinge   | qpos=13 | qvel=12
+ 8 | hl_hy      | type=hinge   | qpos=14 | qvel=13
+ 9 | hl_kn      | type=hinge   | qpos=15 | qvel=14
+10 | hr_hx      | type=hinge   | qpos=16 | qvel=15
+11 | hr_hy      | type=hinge   | qpos=17 | qvel=16
+12 | hr_kn      | type=hinge   | qpos=18 | qvel=17
+
+Actuated joint properties: 
+fl_hx   | axis=[ 1.00,  0.00,  0.00] | range=[ -0.785,   0.785] | limited=True | damping= 0.00 | friction= 0.00 | armature= 0.00
+fl_hy   | axis=[ 0.00,  1.00,  0.00] | range=[ -0.899,   2.295] | limited=True | damping= 0.00 | friction= 0.00 | armature= 0.00
+fl_kn   | axis=[ 0.00,  1.00,  0.00] | range=[ -2.793,  -0.254] | limited=True | damping= 0.00 | friction= 0.00 | armature= 0.00
+fr_hx   | axis=[ 1.00,  0.00,  0.00] | range=[ -0.785,   0.785] | limited=True | damping= 0.00 | friction= 0.00 | armature= 0.00
+fr_hy   | axis=[ 0.00,  1.00,  0.00] | range=[ -0.899,   2.244] | limited=True | damping= 0.00 | friction= 0.00 | armature= 0.00
+fr_kn   | axis=[ 0.00,  1.00,  0.00] | range=[ -2.793,  -0.256] | limited=True | damping= 0.00 | friction= 0.00 | armature= 0.00
+hl_hx   | axis=[ 1.00,  0.00,  0.00] | range=[ -0.785,   0.785] | limited=True | damping= 0.00 | friction= 0.00 | armature= 0.00
+hl_hy   | axis=[ 0.00,  1.00,  0.00] | range=[ -0.899,   2.295] | limited=True | damping= 0.00 | friction= 0.00 | armature= 0.00
+hl_kn   | axis=[ 0.00,  1.00,  0.00] | range=[ -2.793,  -0.247] | limited=True | damping= 0.00 | friction= 0.00 | armature= 0.00
+hr_hx   | axis=[ 1.00,  0.00,  0.00] | range=[ -0.785,   0.785] | limited=True | damping= 0.00 | friction= 0.00 | armature= 0.00
+hr_hy   | axis=[ 0.00,  1.00,  0.00] | range=[ -0.899,   2.295] | limited=True | damping= 0.00 | friction= 0.00 | armature= 0.00
+hr_kn   | axis=[ 0.00,  1.00,  0.00] | range=[ -2.793,  -0.248] | limited=True | damping= 0.00 | friction= 0.00 | armature= 0.00
+
+Actuators:
+ 0 | fl_hx    | joint=fl_hx    | gear=1.0 | control_limited=True | control_range=[-0.785398  0.785398] | force_limited=False | force_range=[0. 0.] | gain=500.0 | bias=[   0. -500.  -40.]
+ 1 | fl_hy    | joint=fl_hy    | gear=1.0 | control_limited=True | control_range=[-0.898845  2.29511 ] | force_limited=False | force_range=[0. 0.] | gain=500.0 | bias=[   0. -500.  -40.]
+ 2 | fl_kn    | joint=fl_kn    | gear=1.0 | control_limited=True | control_range=[-2.7929   -0.254402] | force_limited=False | force_range=[0. 0.] | gain=500.0 | bias=[   0. -500.  -40.]
+ 3 | fr_hx    | joint=fr_hx    | gear=1.0 | control_limited=True | control_range=[-0.785398  0.785398] | force_limited=False | force_range=[0. 0.] | gain=500.0 | bias=[   0. -500.  -40.]
+ 4 | fr_hy    | joint=fr_hy    | gear=1.0 | control_limited=True | control_range=[-0.898845  2.24363 ] | force_limited=False | force_range=[0. 0.] | gain=500.0 | bias=[   0. -500.  -40.]
+ 5 | fr_kn    | joint=fr_kn    | gear=1.0 | control_limited=True | control_range=[-2.7929   -0.255648] | force_limited=False | force_range=[0. 0.] | gain=500.0 | bias=[   0. -500.  -40.]
+ 6 | hl_hx    | joint=hl_hx    | gear=1.0 | control_limited=True | control_range=[-0.785398  0.785398] | force_limited=False | force_range=[0. 0.] | gain=500.0 | bias=[   0. -500.  -40.]
+ 7 | hl_hy    | joint=hl_hy    | gear=1.0 | control_limited=True | control_range=[-0.898845  2.29511 ] | force_limited=False | force_range=[0. 0.] | gain=500.0 | bias=[   0. -500.  -40.]
+ 8 | hl_kn    | joint=hl_kn    | gear=1.0 | control_limited=True | control_range=[-2.7929   -0.247067] | force_limited=False | force_range=[0. 0.] | gain=500.0 | bias=[   0. -500.  -40.]
+ 9 | hr_hx    | joint=hr_hx    | gear=1.0 | control_limited=True | control_range=[-0.785398  0.785398] | force_limited=False | force_range=[0. 0.] | gain=500.0 | bias=[   0. -500.  -40.]
+10 | hr_hy    | joint=hr_hy    | gear=1.0 | control_limited=True | control_range=[-0.898845  2.29511 ] | force_limited=False | force_range=[0. 0.] | gain=500.0 | bias=[   0. -500.  -40.]
+11 | hr_kn    | joint=hr_kn    | gear=1.0 | control_limited=True | control_range=[-2.7929   -0.248282] | force_limited=False | force_range=[0. 0.] | gain=500.0 | bias=[   0. -500.  -40.]
+
+Joint-level actuator-force limits:
+ 1 | joint=fl_hx    | limited=True | force_range=[-1000.  1000.]
+ 2 | joint=fl_hy    | limited=True | force_range=[-1000.  1000.]
+ 3 | joint=fl_kn    | limited=True | force_range=[-1000.  1000.]
+ 4 | joint=fr_hx    | limited=True | force_range=[-1000.  1000.]
+ 5 | joint=fr_hy    | limited=True | force_range=[-1000.  1000.]
+ 6 | joint=fr_kn    | limited=True | force_range=[-1000.  1000.]
+ 7 | joint=hl_hx    | limited=True | force_range=[-1000.  1000.]
+ 8 | joint=hl_hy    | limited=True | force_range=[-1000.  1000.]
+ 9 | joint=hl_kn    | limited=True | force_range=[-1000.  1000.]
+10 | joint=hr_hx    | limited=True | force_range=[-1000.  1000.]
+11 | joint=hr_hy    | limited=True | force_range=[-1000.  1000.]
+12 | joint=hr_kn    | limited=True | force_range=[-1000.  1000.]
+
+Confirmed V1 actuator contract
+------------------------------
+Control input: desired joint position
+Control range: inherited joint position limits
+Kp: 500
+Kd: 40
+Transmission gear: 1
+Passive joint damping: 0
+Joint friction loss: 0
+Armature: 0
+Joint-level actuator-force range: [-1000, 1000]
+
+Body inertial properties:
+ 0 | world    | parent=<none>   | mass= 0.00 | COM=[0. 0. 0.] | inertia=[0. 0. 0.] | inertia_quat=[1. 0. 0. 0.]
+ 1 | body     | parent=world    | mass=32.86 | COM=[ 6.39440e-03 -9.81216e-05  9.11379e-04] | inertia=[0.13144 0.13144 0.13144] | inertia_quat=[1. 0. 0. 0.]
+ 2 | fl_hip   | parent=body     | mass= 1.68 | COM=[-5.37435e-03  1.28418e-02  9.87523e-05] | inertia=[0.00226544 0.00211474 0.00181296] | inertia_quat=[ 0.5  0.5 -0.5  0.5]
+ 3 | fl_uleg  | parent=fl_hip   | mass= 2.34 | COM=[ 0.00514237 -0.00243237 -0.121009  ] | inertia=[0.0275596  0.0273549  0.00284815] | inertia_quat=[1. 0. 0. 0.]
+ 4 | fl_lleg  | parent=fl_uleg  | mass= 0.35 | COM=[ 2.25794e-03  4.60760e-05 -1.80082e-01] | inertia=[0.00405032 0.00399902 0.00014934] | inertia_quat=[0.70710678 0.         0.         0.70710678]
+ 5 | fr_hip   | parent=body     | mass= 1.68 | COM=[-5.37435e-03 -1.28418e-02 -9.87523e-05] | inertia=[0.00226544 0.00211474 0.00181296] | inertia_quat=[ 0.5  0.5 -0.5  0.5]
+ 6 | fr_uleg  | parent=fr_hip   | mass= 2.34 | COM=[ 0.00514237  0.00243237 -0.121009  ] | inertia=[0.0275596  0.0273549  0.00284815] | inertia_quat=[1. 0. 0. 0.]
+ 7 | fr_lleg  | parent=fr_uleg  | mass= 0.35 | COM=[ 2.25794e-03  4.60760e-05 -1.80082e-01] | inertia=[0.00405032 0.00399902 0.00014934] | inertia_quat=[0.70710678 0.         0.         0.70710678]
+ 8 | hl_hip   | parent=body     | mass= 1.68 | COM=[ 5.37435e-03  1.28418e-02 -9.87523e-05] | inertia=[0.00226544 0.00211474 0.00181296] | inertia_quat=[ 0.5  0.5 -0.5  0.5]
+ 9 | hl_uleg  | parent=hl_hip   | mass= 2.34 | COM=[ 0.00514237 -0.00243237 -0.121009  ] | inertia=[0.0275596  0.0273549  0.00284815] | inertia_quat=[1. 0. 0. 0.]
+10 | hl_lleg  | parent=hl_uleg  | mass= 0.35 | COM=[ 2.25794e-03  4.60760e-05 -1.80082e-01] | inertia=[0.00405032 0.00399902 0.00014934] | inertia_quat=[0.70710678 0.         0.         0.70710678]
+11 | hr_hip   | parent=body     | mass= 1.68 | COM=[ 5.37435e-03 -1.28418e-02  9.87523e-05] | inertia=[0.00226544 0.00211474 0.00181296] | inertia_quat=[ 0.5  0.5 -0.5  0.5]
+12 | hr_uleg  | parent=hr_hip   | mass= 2.34 | COM=[ 0.00514237  0.00243237 -0.121009  ] | inertia=[0.0275596  0.0273549  0.00284815] | inertia_quat=[1. 0. 0. 0.]
+13 | hr_lleg  | parent=hr_uleg  | mass= 0.35 | COM=[ 2.25794e-03  4.60760e-05 -1.80082e-01] | inertia=[0.00405032 0.00399902 0.00014934] | inertia_quat=[0.70710678 0.         0.         0.70710678]
+
+Total compiled mass: 50.340000 kg
+
+Geometry properties:
+ 0 | geom=<unnamed:0>          | body=body     | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.10884535 0.1187281  0.43414406] | position=[0.00614905 0.00017745 0.00998509]
+ 1 | geom=<unnamed:1>          | body=body     | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.09619129 0.12058025 0.44186806] | position=[-2.29524625e-04 -5.96302627e-05  3.23473434e-04]
+ 2 | geom=body_collision       | body=body     | type=mesh | collision=True | contype=1 | conaffinity=1 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.10335231 0.12857474 0.44845143] | position=[3.46923147e-03 6.73257399e-05 7.39236428e-04]
+ 3 | geom=<unnamed:3>          | body=fl_hip   | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.04706211 0.05814194 0.08798155] | position=[-1.53804308e-02  1.12124686e-02  8.80057442e-05]
+ 4 | geom=<unnamed:4>          | body=fl_uleg  | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.0475305  0.05482296 0.2660286 ] | position=[-0.00348037  0.03142493 -0.07781093]
+ 5 | geom=<unnamed:5>          | body=fl_uleg  | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.05988864 0.06865219 0.23959609] | position=[ 0.00227992 -0.00781162 -0.10589971]
+ 6 | geom=fl_uleg_collision    | body=fl_uleg  | type=mesh | collision=True | contype=1 | conaffinity=1 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.06189329 0.07809421 0.2373387 ] | position=[ 0.0055274  -0.00084212 -0.11817298]
+ 7 | geom=<unnamed:7>          | body=fl_lleg  | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.02300075 0.04095525 0.25803485] | position=[ 0.00546245  0.00141382 -0.20404646]
+ 8 | geom=fl_lleg_collision    | body=fl_lleg  | type=capsule | collision=True | contype=1 | conaffinity=1 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.025   0.14625 0.     ] | position=[ 0.       0.      -0.16625]
+ 9 | geom=FL                   | body=fl_lleg  | type=sphere | collision=True | contype=1 | conaffinity=1 | friction=[0.8  0.02 0.01] | size=[0.036 0.    0.   ] | position=[ 0.      0.     -0.3365]
+10 | geom=<unnamed:10>         | body=fr_hip   | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.04713871 0.05815274 0.08806387] | position=[-0.01538038 -0.01121505  0.00012893]
+11 | geom=<unnamed:11>         | body=fr_uleg  | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.04747467 0.05478275 0.26598632] | position=[-0.00364555 -0.03136764 -0.07775445]
+12 | geom=<unnamed:12>         | body=fr_uleg  | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.05996823 0.06865682 0.23981347] | position=[ 0.00223844  0.00771614 -0.10569678]
+13 | geom=fr_uleg_collision    | body=fr_uleg  | type=mesh | collision=True | contype=1 | conaffinity=1 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.06190242 0.07811549 0.23725238] | position=[ 0.00547019  0.00075448 -0.11819012]
+14 | geom=<unnamed:14>         | body=fr_lleg  | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.02300055 0.04096717 0.25806127] | position=[ 0.00555602 -0.00201903 -0.20402814]
+15 | geom=fr_lleg_collision    | body=fr_lleg  | type=capsule | collision=True | contype=1 | conaffinity=1 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.025   0.14625 0.     ] | position=[ 0.       0.      -0.16625]
+16 | geom=FR                   | body=fr_lleg  | type=sphere | collision=True | contype=1 | conaffinity=1 | friction=[0.8  0.02 0.01] | size=[0.036 0.    0.   ] | position=[ 0.      0.     -0.3365]
+17 | geom=<unnamed:17>         | body=hl_hip   | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.04714056 0.05815366 0.08806669] | position=[1.53820819e-02 1.12087131e-02 5.92583216e-05]
+18 | geom=<unnamed:18>         | body=hl_uleg  | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.04749851 0.05493936 0.2659294 ] | position=[-0.00364382  0.03128051 -0.07805505]
+19 | geom=<unnamed:19>         | body=hl_uleg  | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.05950467 0.06844289 0.23982089] | position=[ 0.00216432 -0.00793118 -0.10583795]
+20 | geom=hl_uleg_collision    | body=hl_uleg  | type=mesh | collision=True | contype=1 | conaffinity=1 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.06189329 0.07809421 0.2373387 ] | position=[ 0.0055274  -0.00084212 -0.11817298]
+21 | geom=<unnamed:21>         | body=hl_lleg  | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.02300127 0.04097108 0.2580699 ] | position=[ 0.00514172  0.00166564 -0.20404973]
+22 | geom=hl_lleg_collision    | body=hl_lleg  | type=capsule | collision=True | contype=1 | conaffinity=1 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.025   0.14625 0.     ] | position=[ 0.       0.      -0.16625]
+23 | geom=HL                   | body=hl_lleg  | type=sphere | collision=True | contype=1 | conaffinity=1 | friction=[0.8  0.02 0.01] | size=[0.036 0.    0.   ] | position=[ 0.      0.     -0.3365]
+24 | geom=<unnamed:24>         | body=hr_hip   | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.04715644 0.05815866 0.08810057] | position=[ 1.53883758e-02 -1.12080806e-02  5.19058962e-05]
+25 | geom=<unnamed:25>         | body=hr_uleg  | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.04708618 0.05478298 0.26622295] | position=[-0.00360536 -0.03110502 -0.07768535]
+26 | geom=<unnamed:26>         | body=hr_uleg  | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.05966485 0.06861926 0.23964559] | position=[ 0.00216397  0.0079363  -0.10600141]
+27 | geom=hr_uleg_collision    | body=hr_uleg  | type=mesh | collision=True | contype=1 | conaffinity=1 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.06190242 0.07811549 0.23725238] | position=[ 0.00547019  0.00075448 -0.11819012]
+28 | geom=<unnamed:28>         | body=hr_lleg  | type=mesh | collision=False | contype=0 | conaffinity=0 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.02300127 0.04097108 0.2580699 ] | position=[ 0.00514172  0.00166564 -0.20404973]
+29 | geom=hr_lleg_collision    | body=hr_lleg  | type=capsule | collision=True | contype=1 | conaffinity=1 | friction=[1.e+00 5.e-03 1.e-04] | size=[0.025   0.14625 0.     ] | position=[ 0.       0.      -0.16625]
+30 | geom=HR                   | body=hr_lleg  | type=sphere | collision=True | contype=1 | conaffinity=1 | friction=[0.8  0.02 0.01] | size=[0.036 0.    0.   ] | position=[ 0.      0.     -0.3365]
+
+Collision contact parameters:
+ 2 | geom=body_collision       | body=body     | condim=3 | priority=0 | solmix=1.000 | solref=[0.004 1.   ] | solimp=[9.0e-01 9.5e-01 1.0e-03 5.0e-01 2.0e+00] | margin=0.0000 | gap=0.0000
+ 6 | geom=fl_uleg_collision    | body=fl_uleg  | condim=3 | priority=0 | solmix=1.000 | solref=[0.004 1.   ] | solimp=[9.0e-01 9.5e-01 1.0e-03 5.0e-01 2.0e+00] | margin=0.0000 | gap=0.0000
+ 8 | geom=fl_lleg_collision    | body=fl_lleg  | condim=3 | priority=0 | solmix=1.000 | solref=[0.004 1.   ] | solimp=[9.0e-01 9.5e-01 1.0e-03 5.0e-01 2.0e+00] | margin=0.0000 | gap=0.0000
+ 9 | geom=FL                   | body=fl_lleg  | condim=6 | priority=1 | solmix=1.000 | solref=[0.004 1.   ] | solimp=[0.015 1.    0.036 0.5   2.   ] | margin=0.0000 | gap=0.0000
+13 | geom=fr_uleg_collision    | body=fr_uleg  | condim=3 | priority=0 | solmix=1.000 | solref=[0.004 1.   ] | solimp=[9.0e-01 9.5e-01 1.0e-03 5.0e-01 2.0e+00] | margin=0.0000 | gap=0.0000
+15 | geom=fr_lleg_collision    | body=fr_lleg  | condim=3 | priority=0 | solmix=1.000 | solref=[0.004 1.   ] | solimp=[9.0e-01 9.5e-01 1.0e-03 5.0e-01 2.0e+00] | margin=0.0000 | gap=0.0000
+16 | geom=FR                   | body=fr_lleg  | condim=6 | priority=1 | solmix=1.000 | solref=[0.004 1.   ] | solimp=[0.015 1.    0.036 0.5   2.   ] | margin=0.0000 | gap=0.0000
+20 | geom=hl_uleg_collision    | body=hl_uleg  | condim=3 | priority=0 | solmix=1.000 | solref=[0.004 1.   ] | solimp=[9.0e-01 9.5e-01 1.0e-03 5.0e-01 2.0e+00] | margin=0.0000 | gap=0.0000
+22 | geom=hl_lleg_collision    | body=hl_lleg  | condim=3 | priority=0 | solmix=1.000 | solref=[0.004 1.   ] | solimp=[9.0e-01 9.5e-01 1.0e-03 5.0e-01 2.0e+00] | margin=0.0000 | gap=0.0000
+23 | geom=HL                   | body=hl_lleg  | condim=6 | priority=1 | solmix=1.000 | solref=[0.004 1.   ] | solimp=[0.015 1.    0.036 0.5   2.   ] | margin=0.0000 | gap=0.0000
+27 | geom=hr_uleg_collision    | body=hr_uleg  | condim=3 | priority=0 | solmix=1.000 | solref=[0.004 1.   ] | solimp=[9.0e-01 9.5e-01 1.0e-03 5.0e-01 2.0e+00] | margin=0.0000 | gap=0.0000
+29 | geom=hr_lleg_collision    | body=hr_lleg  | condim=3 | priority=0 | solmix=1.000 | solref=[0.004 1.   ] | solimp=[9.0e-01 9.5e-01 1.0e-03 5.0e-01 2.0e+00] | margin=0.0000 | gap=0.0000
+30 | geom=HR                   | body=hr_lleg  | condim=6 | priority=1 | solmix=1.000 | solref=[0.004 1.   ] | solimp=[0.015 1.    0.036 0.5   2.   ] | margin=0.0000 | gap=0.0000
+
+Global simulation options:
+timestep=0.002
+gravity=[ 0.    0.   -9.81]
+integrator=implicitfast
+cone=elliptic
+solver=newton
+impratio=100.0
+iterations=100
+tolerance=1e-08
+noslip_iterations=0
+noslip_tolerance=1e-06
+
+Keyframes:
+
+Keyframe 0: home
+  Base position   : [0.   0.   0.46]
+  Base quaternion : [1. 0. 0. 0.]
+  Joint positions : [ 0.    1.04 -1.8   0.    1.04 -1.8   0.    1.04 -1.8   0.    1.04 -1.8 ]
+  Velocity        : [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  Control         : [ 0.    1.04 -1.8   0.    1.04 -1.8   0.    1.04 -1.8   0.    1.04 -1.8 ]
