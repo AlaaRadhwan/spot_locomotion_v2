@@ -1,0 +1,17 @@
+Model: /home/alaa-radhwan/Projects/spot_locomotion_v2/src/spot_locomotion_v2/robot/mjcf/reference/spot.xml
+Base position: [0.   0.   0.46]
+Base quaternion: [1. 0. 0. 0.]
+
+Nominal foot positions:
+FL | centre=[0.266358 0.1658   0.032542] | radius=0.036000 m | bottom_z=-0.003458 m (-3.458 mm)
+FR | centre=[ 0.266358 -0.1658    0.032542] | radius=0.036000 m | bottom_z=-0.003458 m (-3.458 mm)
+HL | centre=[-0.329342  0.1658    0.032542] | radius=0.036000 m | bottom_z=-0.003458 m (-3.458 mm)
+HR | centre=[-0.329342 -0.1658    0.032542] | radius=0.036000 m | bottom_z=-0.003458 m (-3.458 mm)
+
+Clearance summary:
+minimum=-3.458 mm
+maximum=-3.458 mm
+difference=0.000 mm
+
+Initial actuator forces:
+[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
