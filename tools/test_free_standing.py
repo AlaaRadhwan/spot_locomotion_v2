@@ -25,9 +25,9 @@ REPORTS_DIR = PROJECT_ROOT / "reports"
 CSV_PATH = REPORTS_DIR / "free_standing_kp100_300_kd8.csv"
 PLOT_PATH = REPORTS_DIR / "free_standing_kp100_300_kd8.png"
 
-SIMULATION_DURATION = 60.0
+SIMULATION_DURATION = 2.0
 
-KP_h = 300.0
+KP_h = 500.0
 KP_kn = 500.0
 
 KP_VALUES = np.asarray(
@@ -53,11 +53,11 @@ KD_VALUES = np.asarray(
     dtype=np.float64,
 )
 
-HIP_TORQUE_LIMIT = 44.88
+HIP_TORQUE_LIMIT = 69.52
 
 # Local approximation around the home knee angle q = -1.8 rad.
 # This will later be replaced by an angle-dependent knee limit.
-KNEE_TORQUE_LIMIT = 105.98
+KNEE_TORQUE_LIMIT = 164.15
 
 JOINT_NAMES = [
     "fl_hx",
