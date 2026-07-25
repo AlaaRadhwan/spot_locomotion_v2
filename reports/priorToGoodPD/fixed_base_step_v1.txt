@@ -1,0 +1,24 @@
+Model: /home/alaa-radhwan/Projects/spot_locomotion_v2/src/spot_locomotion_v2/robot/mjcf/experiments/spot_fixed_base_v1.xml
+Test joint: fl_hy
+Physics timestep: 0.002 s
+Initial target: 1.040000 rad
+Final target: 1.140000 rad
+Step size: 0.100000 rad
+Expected instantaneous step torque: 50.000 N·m
+
+At the first recorded step sample:
+time: 0.100000 s
+position: 1.040000 rad
+velocity: 0.000000 rad/s
+actuator force: 50.000000 N
+joint torque: 50.000000 N·m
+
+Response summary:
+Final position: 1.139854 rad
+Final error: 0.000146 rad
+Peak velocity: 1.116908 rad/s
+Peak actuator force: 50.000000
+Peak joint torque: 50.000000 N·m
+
+CSV written to: /home/alaa-radhwan/Projects/spot_locomotion_v2/reports/fixed_base_step_v1.csv
+Plot written to: /home/alaa-radhwan/Projects/spot_locomotion_v2/reports/fixed_base_step_v1.png

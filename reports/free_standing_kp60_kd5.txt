@@ -1,0 +1,55 @@
+Model: /home/alaa-radhwan/Projects/spot_locomotion_v2/src/spot_locomotion_v2/robot/mjcf/experiments/scene_free_standing.xml
+Physics timestep: 0.002000 s
+Simulation duration: 5.00 s
+Kp: [100. 100. 300. 100. 100. 300. 100. 100. 300. 100. 100. 300.]
+Kd: [6.5 6.5 6.  6.5 6.5 6.  6.5 6.5 6.  6.5 6.5 6. ]
+Initial base height: 0.460000 m
+Desired joint positions: [ 0.    1.04 -1.8   0.    1.04 -1.8   0.    1.04 -1.8   0.    1.04 -1.8 ]
+Torque limits: [ 44.88  44.88 105.98  44.88  44.88 105.98  44.88  44.88 105.98  44.88
+  44.88 105.98]
+
+Opening MuJoCo viewer. Close the viewer to stop the test early.
+
+Standing summary:
+Executed simulation time: 5.000 s
+Final base height: 0.420145 m
+Minimum base height: 0.408273 m
+Final roll: 0.007 deg
+Final pitch: -0.701 deg
+Maximum absolute roll: 0.009 deg
+Maximum absolute pitch: 1.389 deg
+Maximum joint error: 0.178486 rad
+Peak applied torque: 55.670171 N·m
+Final number of feet contacting terrain: 4
+
+Per-joint saturation:
+  fl_hx :   0.000%
+  fl_hy :   0.000%
+  fl_kn :   0.000%
+  fr_hx :   0.000%
+  fr_hy :   0.000%
+  fr_kn :   0.000%
+  hl_hx :   0.000%
+  hl_hy :   0.000%
+  hl_kn :   0.000%
+  hr_hx :   0.000%
+  hr_hy :   0.000%
+  hr_kn :   0.000%
+
+Final per-joint state:
+joint  | desired | actual  | error   | velocity | torque  | peak torque
+fl_hx  |  +0.000 |  +0.012 |  -0.012 |  +0.0023 |   -1.26 |        1.26
+fl_hy  |  +1.040 |  +0.986 |  +0.054 |  -0.0002 |   +5.41 |        9.87
+fl_kn  |  -1.800 |  -1.897 |  +0.097 |  +0.0000 |  +29.25 |       55.65
+fr_hx  |  +0.000 |  -0.012 |  +0.012 |  -0.0023 |   +1.26 |        1.26
+fr_hy  |  +1.040 |  +0.986 |  +0.054 |  -0.0002 |   +5.41 |        9.87
+fr_kn  |  -1.800 |  -1.898 |  +0.098 |  +0.0000 |  +29.28 |       55.67
+hl_hx  |  +0.000 |  +0.015 |  -0.015 |  +0.0030 |   -1.53 |        1.53
+hl_hy  |  +1.040 |  +0.997 |  +0.043 |  -0.0005 |   +4.31 |        5.62
+hl_kn  |  -1.800 |  -1.922 |  +0.122 |  -0.0003 |  +36.56 |       40.14
+hr_hx  |  +0.000 |  -0.015 |  +0.015 |  -0.0030 |   +1.54 |        1.54
+hr_hy  |  +1.040 |  +0.997 |  +0.043 |  -0.0005 |   +4.31 |        5.62
+hr_kn  |  -1.800 |  -1.922 |  +0.122 |  -0.0003 |  +36.59 |       40.16
+
+CSV written to: /home/alaa-radhwan/Projects/spot_locomotion_v2/reports/free_standing_kp60_kd5.csv
+Plot written to: /home/alaa-radhwan/Projects/spot_locomotion_v2/reports/free_standing_kp60_kd5.png
