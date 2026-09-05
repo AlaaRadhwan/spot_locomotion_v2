@@ -22,7 +22,7 @@ The script records all 12 joints but produces only the plots needed to answer:
 
 Outputs
 -------
-reports/actuator_characterization/push_recovery_kp500_kd10/
+reports/actuator_characterization/<gain-specific-directory>/
     push_recovery.csv
     base_height.png
     base_vertical_velocity.png
@@ -44,10 +44,12 @@ import mujoco.viewer
 import numpy as np
 
 from spot_locomotion_v2.robot.spot_constants import (
+    HIP_KD,
+    HIP_KP,
     HIP_TORQUE_LIMIT,
-    KD,
+    KNEE_KD,
+    KNEE_KP,
     KNEE_TORQUE_LIMIT,
-    KP,
     PHYSICS_FREQUENCY_HZ,
 )
 
@@ -145,7 +147,10 @@ def output_dir() -> Path:
         repo_root()
         / "reports"
         / "actuator_characterization"
-        / "push_recovery_kp500_kd10"
+        / (
+            f"push_hip_kp{HIP_KP:g}_kd{HIP_KD:g}"
+            f"_knee_kp{KNEE_KP:g}_kd{KNEE_KD:g}"
+        )
     )
     path.mkdir(parents=True, exist_ok=True)
     return path
@@ -183,6 +188,14 @@ def torque_limit_for_joint(joint_name: str) -> float:
     if joint_name.endswith("_kn"):
         return float(KNEE_TORQUE_LIMIT)
     raise ValueError(f"No torque limit for joint {joint_name!r}")
+
+
+def gains_for_joint(joint_name: str) -> tuple[float, float]:
+    if joint_name.endswith(("_hx", "_hy")):
+        return float(HIP_KP), float(HIP_KD)
+    if joint_name.endswith("_kn"):
+        return float(KNEE_KP), float(KNEE_KD)
+    raise ValueError(f"No gains defined for joint {joint_name!r}")
 
 
 def initialize_home(
@@ -231,9 +244,10 @@ def apply_home_pose_pd(
         q = float(data.qpos[qpos_addr[name]])
         qdot = float(data.qvel[dof_addr[name]])
 
+        kp, kd = gains_for_joint(name)
         tau_raw = float(
-            KP * (HOME[name] - q)
-            - KD * qdot
+            kp * (HOME[name] - q)
+            - kd * qdot
         )
 
         limit = torque_limit_for_joint(name)
@@ -614,7 +628,8 @@ def main() -> None:
     print("---------------------------------")
     print(f"Scene: {xml_path}")
     print(f"Physics: {PHYSICS_FREQUENCY_HZ:.0f} Hz")
-    print(f"PD gains: Kp={KP}, Kd={KD}")
+    print(f"HX/HY gains: Kp={HIP_KP}, Kd={HIP_KD}")
+    print(f"Knee gains:  Kp={KNEE_KP}, Kd={KNEE_KD}")
     print(
         f"Limits: hip={HIP_TORQUE_LIMIT:.2f} Nm, "
         f"knee={KNEE_TORQUE_LIMIT:.2f} Nm"

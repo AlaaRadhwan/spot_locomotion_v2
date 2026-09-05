@@ -17,7 +17,7 @@ For each joint it records:
 
 A MuJoCo viewer is opened so the motion can be inspected visually while the
 test runs. Plots and a CSV are saved automatically under:
-    reports/actuator_characterization/current_kp500_kd10/
+    reports/actuator_characterization/<gain-specific-directory>/
 
 This is intentionally a small diagnostic test, not a parameter sweep.
 """
@@ -33,21 +33,17 @@ import mujoco
 import mujoco.viewer
 import numpy as np
 
+from spot_locomotion_v2.robot.spot_constants import (
+    HIP_KD,
+    HIP_KP,
+    HIP_TORQUE_LIMIT,
+    KNEE_KD,
+    KNEE_KP,
+    KNEE_TORQUE_LIMIT,
+    PHYSICS_FREQUENCY_HZ,
+)
 
-# ---------------------------------------------------------------------------
-# Current V2 actuator parameters.
-# Keep these synchronized with robot/spot_constants.py while evaluating the
-# current baseline.
-# ---------------------------------------------------------------------------
-
-KP = 500.0
-KD = 10.0
-
-HIP_TORQUE_LIMIT = 69.52
-KNEE_TORQUE_LIMIT = 164.15
-
-PHYSICS_HZ = 500.0
-DT = 1.0 / PHYSICS_HZ
+DT = 1.0 / PHYSICS_FREQUENCY_HZ
 
 
 # ---------------------------------------------------------------------------
@@ -128,7 +124,10 @@ def output_dir() -> Path:
         repo_root()
         / "reports"
         / "actuator_characterization"
-        / "current_kp500_kd10"
+        / (
+            f"step_hip_kp{HIP_KP:g}_kd{HIP_KD:g}"
+            f"_knee_kp{KNEE_KP:g}_kd{KNEE_KD:g}"
+        )
     )
     path.mkdir(parents=True, exist_ok=True)
     return path
@@ -171,6 +170,14 @@ def torque_limit_for_joint(joint_name: str) -> float:
     if joint_name.endswith("_kn"):
         return KNEE_TORQUE_LIMIT
     raise ValueError(f"No torque limit defined for {joint_name}")
+
+
+def gains_for_joint(joint_name: str) -> tuple[float, float]:
+    if joint_name.endswith(("_hx", "_hy")):
+        return float(HIP_KP), float(HIP_KD)
+    if joint_name.endswith("_kn"):
+        return float(KNEE_KP), float(KNEE_KD)
+    raise ValueError(f"No gains defined for {joint_name}")
 
 
 def desired_positions(t: float) -> dict[str, float]:
@@ -234,7 +241,8 @@ def apply_explicit_pd(
         q = float(data.qpos[qpos_addr[name]])
         qd = float(data.qvel[dof_addr[name]])
 
-        tau_raw = KP * (q_des[name] - q) - KD * qd
+        kp, kd = gains_for_joint(name)
+        tau_raw = kp * (q_des[name] - q) - kd * qd
         tau_limit = torque_limit_for_joint(name)
         tau_applied = float(
             np.clip(tau_raw, -tau_limit, tau_limit)
@@ -366,8 +374,9 @@ def main() -> None:
     print("Spot V2 visual actuator step test")
     print("--------------------------------")
     print(f"Model: {xml_path}")
-    print(f"Physics: {PHYSICS_HZ:.0f} Hz")
-    print(f"PD gains: Kp={KP}, Kd={KD}")
+    print(f"Physics: {PHYSICS_FREQUENCY_HZ:.0f} Hz")
+    print(f"HX/HY gains: Kp={HIP_KP}, Kd={HIP_KD}")
+    print(f"Knee gains:  Kp={KNEE_KP}, Kd={KNEE_KD}")
     print(
         f"Limits: hip={HIP_TORQUE_LIMIT:.2f} Nm, "
         f"knee={KNEE_TORQUE_LIMIT:.2f} Nm"

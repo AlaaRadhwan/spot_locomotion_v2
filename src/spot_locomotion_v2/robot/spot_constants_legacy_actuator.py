@@ -1,49 +1,60 @@
-"""Legacy native-position actuator configuration for A/B diagnosis only.
+"""Experimental explicit-PD actuator configuration.
 
-This reproduces the high-authority actuator behavior used by the older
-successful Spot locomotion project as closely as practical in MjLab 1.5.3.
+Current A/B experiment:
+    Same IdealPdActuator implementation as V2
+    Same Kp = 500
+    Same Kd = 10
+    2x current V2 torque limits
 
-Unlike the normal V2 robot, this intentionally uses MuJoCo's native
-position actuator rather than an explicit IdealPdActuator.
+Diagnostic only.
 """
 
-from mjlab.actuator import BuiltinPositionActuatorCfg
+from mjlab.actuator import IdealPdActuatorCfg
 from mjlab.entity import EntityArticulationInfoCfg, EntityCfg
 
 from .spot_constants import (
+    KP,
+    KD,
     SPOT_INIT_STATE,
     get_spec,
 )
 
 
-LEGACY_KP = 500.0
-LEGACY_KD = 40.0
-LEGACY_EFFORT_LIMIT = 1000.0
+EXPERIMENT_HIP_TORQUE_LIMIT = 139.04
+EXPERIMENT_KNEE_TORQUE_LIMIT = 328.30
 
 
-LEGACY_SPOT_ACTUATOR_CFG = BuiltinPositionActuatorCfg(
+EXPERIMENT_HIP_ACTUATOR_CFG = IdealPdActuatorCfg(
     target_names_expr=(
         ".*_hx",
         ".*_hy",
-        ".*_kn",
     ),
-    stiffness=LEGACY_KP,
-    damping=LEGACY_KD,
-    effort_limit=LEGACY_EFFORT_LIMIT,
+    stiffness=KP,
+    damping=KD,
+    effort_limit=EXPERIMENT_HIP_TORQUE_LIMIT,
 )
 
 
-LEGACY_SPOT_ARTICULATION_CFG = EntityArticulationInfoCfg(
-    actuators=(LEGACY_SPOT_ACTUATOR_CFG,),
+EXPERIMENT_KNEE_ACTUATOR_CFG = IdealPdActuatorCfg(
+    target_names_expr=(".*_kn",),
+    stiffness=KP,
+    damping=KD,
+    effort_limit=EXPERIMENT_KNEE_TORQUE_LIMIT,
+)
+
+
+EXPERIMENT_SPOT_ARTICULATION_CFG = EntityArticulationInfoCfg(
+    actuators=(
+        EXPERIMENT_HIP_ACTUATOR_CFG,
+        EXPERIMENT_KNEE_ACTUATOR_CFG,
+    ),
 )
 
 
 def get_spot_legacy_actuator_robot_cfg() -> EntityCfg:
-    """Return Spot with the legacy native MuJoCo position actuator."""
-
     return EntityCfg(
         init_state=SPOT_INIT_STATE,
         spec_fn=get_spec,
-        articulation=LEGACY_SPOT_ARTICULATION_CFG,
+        articulation=EXPERIMENT_SPOT_ARTICULATION_CFG,
         sort_actuators=True,
     )

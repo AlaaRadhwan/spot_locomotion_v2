@@ -114,8 +114,11 @@ HOME_JOINT_POSITION_MAP = dict(
 # Provisional explicit PD actuator model.
 ##
 
-KP = 500.0
-KD = 10.0
+HIP_KP = 500.0
+HIP_KD = 10.0
+
+KNEE_KP = 500.0
+KNEE_KD = 10.0
 
 HIP_TORQUE_LIMIT = 69.52
 
@@ -123,21 +126,20 @@ HIP_TORQUE_LIMIT = 69.52
 # This will eventually be replaced by an angle-dependent limit.
 KNEE_TORQUE_LIMIT = 164.15
 
-
 SPOT_HIP_ACTUATOR_CFG = IdealPdActuatorCfg(
     target_names_expr=(
         ".*_hx",
         ".*_hy",
     ),
-    stiffness=KP,
-    damping=KD,
+    stiffness=HIP_KP,
+    damping=HIP_KD,
     effort_limit=HIP_TORQUE_LIMIT,
 )
 
 SPOT_KNEE_ACTUATOR_CFG = IdealPdActuatorCfg(
     target_names_expr=(".*_kn",),
-    stiffness=KP,
-    damping=KD,
+    stiffness=KNEE_KP,
+    damping=KNEE_KD,
     effort_limit=KNEE_TORQUE_LIMIT,
 )
 
