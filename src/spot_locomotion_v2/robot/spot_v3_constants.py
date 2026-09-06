@@ -5,8 +5,8 @@ Rigid-body model:
 
 Actuator baseline:
     MjLab BuiltinPositionActuatorCfg
-    Kp = 60
-    Kd = 1.5
+    Kp = 300
+    Kd = 4
     HX/HY effort limit = 45 N*m
     knee effort limit = 115 N*m
 
