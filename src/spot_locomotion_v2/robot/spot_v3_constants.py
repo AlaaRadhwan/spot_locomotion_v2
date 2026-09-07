@@ -77,7 +77,7 @@ HOME_JOINT_POSITION_MAP = dict(
 # ---------------------------------------------------------------------------
 
 V3_KP = 300.0
-V3_KD = 4
+V3_KD = 40
 
 V3_HIP_EFFORT_LIMIT = 45.0
 V3_KNEE_EFFORT_LIMIT = 115.0
