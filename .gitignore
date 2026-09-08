@@ -11,6 +11,8 @@ wheels/
 .venv/
 
 
+MUJOCO_LOG.TXT
+
 logs/
 runs/
 wandb/

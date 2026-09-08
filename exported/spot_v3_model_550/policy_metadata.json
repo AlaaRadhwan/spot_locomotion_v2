@@ -1,0 +1,128 @@
+{
+  "schema_version": 2,
+  "task_id": "Mjlab-Velocity-Flat-Spot-V3",
+  "checkpoint": "/home/alaa-radhwan/Projects/spot_locomotion_v2/logs/rsl_rl/spot_velocity_v3/2026-09-07_15-57-38_v3_baseline_kp300_kd40_tl45_115/model_550.pt",
+  "policy_frequency_hz": 50.0,
+  "physics_timestep_s": 0.002,
+  "control_decimation": 10,
+  "observation_size": 48,
+  "action_size": 12,
+  "joint_order": [
+    "fl_hx",
+    "fl_hy",
+    "fl_kn",
+    "fr_hx",
+    "fr_hy",
+    "fr_kn",
+    "hl_hx",
+    "hl_hy",
+    "hl_kn",
+    "hr_hx",
+    "hr_hy",
+    "hr_kn"
+  ],
+  "default_joint_positions": [
+    0.0,
+    1.04,
+    -1.8,
+    0.0,
+    1.04,
+    -1.8,
+    0.0,
+    1.04,
+    -1.8,
+    0.0,
+    1.04,
+    -1.8
+  ],
+  "action_scales": [
+    0.3,
+    0.4,
+    0.5,
+    0.3,
+    0.4,
+    0.5,
+    0.3,
+    0.4,
+    0.5,
+    0.3,
+    0.4,
+    0.5
+  ],
+  "observation_order": [
+    {
+      "name": "base_lin_vel",
+      "shape": [
+        3
+      ],
+      "start": 0,
+      "end": 3
+    },
+    {
+      "name": "base_ang_vel",
+      "shape": [
+        3
+      ],
+      "start": 3,
+      "end": 6
+    },
+    {
+      "name": "projected_gravity",
+      "shape": [
+        3
+      ],
+      "start": 6,
+      "end": 9
+    },
+    {
+      "name": "joint_pos",
+      "shape": [
+        12
+      ],
+      "start": 9,
+      "end": 21
+    },
+    {
+      "name": "joint_vel",
+      "shape": [
+        12
+      ],
+      "start": 21,
+      "end": 33
+    },
+    {
+      "name": "actions",
+      "shape": [
+        12
+      ],
+      "start": 33,
+      "end": 45
+    },
+    {
+      "name": "command",
+      "shape": [
+        3
+      ],
+      "start": 45,
+      "end": 48
+    }
+  ],
+  "command_order": [
+    "vx",
+    "vy",
+    "wz"
+  ],
+  "command_units": [
+    "m/s",
+    "m/s",
+    "rad/s"
+  ],
+  "deployment_notes": {
+    "gazebo_physics_hz": 2000,
+    "ros2_control_hz": 2000,
+    "low_level_kp": 300.0,
+    "low_level_kd": 40.0,
+    "hip_effort_limit_nm": 45.0,
+    "knee_effort_limit_nm": 115.0
+  }
+}
