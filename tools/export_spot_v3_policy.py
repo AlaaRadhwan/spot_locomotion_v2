@@ -39,7 +39,7 @@ from spot_locomotion_v2.robot.spot_v3_constants import (
     POLICY_FREQUENCY_HZ,
 )
 
-TASK_ID = "Mjlab-Velocity-Flat-Spot-V3"
+TASK_ID = "Mjlab-Velocity-Flat-Spot-V3-Robust"
 
 ACTION_SCALES = (
     0.30, 0.40, 0.50,

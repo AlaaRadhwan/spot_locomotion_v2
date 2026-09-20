@@ -5,12 +5,17 @@ from mjlab.tasks.velocity.rl import VelocityOnPolicyRunner
 
 from .flat_env_cfg import make_spot_flat_velocity_env_cfg
 from .flat_env_cfg_v3 import make_spot_v3_flat_velocity_env_cfg
+from .flat_env_cfg_v3_robust import (
+    make_spot_v3_robust_flat_velocity_env_cfg,
+)
 from .rl_cfg import spot_v2_ppo_runner_cfg
 from .rl_cfg_v3 import spot_v3_ppo_runner_cfg
+from .rl_cfg_v3_robust import spot_v3_robust_ppo_runner_cfg
 
 
 TASK_ID = "Mjlab-Velocity-Flat-Spot-V2"
 V3_TASK_ID = "Mjlab-Velocity-Flat-Spot-V3"
+V3_ROBUST_TASK_ID = "Mjlab-Velocity-Flat-Spot-V3-Robust"
 
 LEGACY_ACTUATOR_TASK_ID = (
     "Mjlab-Velocity-Flat-Spot-V2-LegacyActuator"
@@ -31,6 +36,15 @@ register_mjlab_task(
     env_cfg=make_spot_v3_flat_velocity_env_cfg(),
     play_env_cfg=make_spot_v3_flat_velocity_env_cfg(play=True),
     rl_cfg=spot_v3_ppo_runner_cfg(),
+    runner_cls=VelocityOnPolicyRunner,
+)
+
+
+register_mjlab_task(
+    task_id=V3_ROBUST_TASK_ID,
+    env_cfg=make_spot_v3_robust_flat_velocity_env_cfg(),
+    play_env_cfg=make_spot_v3_robust_flat_velocity_env_cfg(play=True),
+    rl_cfg=spot_v3_robust_ppo_runner_cfg(),
     runner_cls=VelocityOnPolicyRunner,
 )
 
