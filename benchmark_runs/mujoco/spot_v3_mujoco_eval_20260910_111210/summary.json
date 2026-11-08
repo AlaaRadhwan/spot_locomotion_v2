@@ -1,0 +1,620 @@
+{
+  "schema_version": 1,
+  "simulator": "mujoco",
+  "task_id": "Mjlab-Velocity-Flat-Spot-V3",
+  "checkpoint": "/home/alaa-radhwan/Projects/spot_locomotion_v2/logs/rsl_rl/spot_velocity_v3/2026-09-07_15-57-38_v3_baseline_kp300_kd40_tl45_115/model_550.pt",
+  "seed": 42,
+  "physics_hz": 500.0,
+  "policy_frequency_hz": 50.0,
+  "policy_step_s": 0.02,
+  "low_level_kp": 300.0,
+  "low_level_kd": 40.0,
+  "hip_effort_limit_nm": 45.0,
+  "knee_effort_limit_nm": 115.0,
+  "samples_recorded": 2950,
+  "recorded_duration_s": 59.0,
+  "terminated_early": false,
+  "termination_step": null,
+  "phases": [
+    {
+      "phase": "stand_initial",
+      "samples_total": 250,
+      "samples_steady": 201,
+      "steady_state_skip_s": 1.0,
+      "command": {
+        "vx_mps": 0.0,
+        "vy_mps": 0.0,
+        "wz_radps": 0.0
+      },
+      "tracking": {
+        "mean_actual_vx_mps": -0.0016669962293163188,
+        "mean_actual_vy_mps": -0.00028029292790318806,
+        "mean_actual_wz_radps": 0.0012991185515831693,
+        "vx_mae_mps": 0.0016669962293163188,
+        "vy_mae_mps": 0.00028029292790318806,
+        "wz_mae_radps": 0.0013370760940313558,
+        "vx_rmse_mps": 0.0040136800088617095,
+        "vy_rmse_mps": 0.0004429834318601456,
+        "wz_rmse_radps": 0.0027236370525515114
+      },
+      "body": {
+        "height_mean_m": 0.4539174189911553,
+        "height_min_m": 0.4537755250930786,
+        "height_max_m": 0.45471134781837463,
+        "roll_rms_rad": 0.0033535444338256034,
+        "roll_max_abs_rad": 0.0034265187616467677,
+        "pitch_rms_rad": 0.006989646661808365,
+        "pitch_max_abs_rad": 0.007446204665221186
+      },
+      "joints": {
+        "max_abs_velocity_radps": 0.03285537660121918,
+        "max_abs_effort_nm": 30.585540771484375,
+        "max_effort_limit_ratio": 0.30678780873616535,
+        "saturation_threshold_fraction": 0.98,
+        "saturated_joint_samples": 0,
+        "effort_joint_samples": 2412,
+        "saturation_percent": 0.0
+      }
+    },
+    {
+      "phase": "forward",
+      "samples_total": 250,
+      "samples_steady": 201,
+      "steady_state_skip_s": 1.0,
+      "command": {
+        "vx_mps": 0.5,
+        "vy_mps": 0.0,
+        "wz_radps": 0.0
+      },
+      "tracking": {
+        "mean_actual_vx_mps": 0.47162995765458293,
+        "mean_actual_vy_mps": -0.011844235909228161,
+        "mean_actual_wz_radps": 0.003730949912336365,
+        "vx_mae_mps": 0.02840808908737714,
+        "vy_mae_mps": 0.014755726265298221,
+        "wz_mae_radps": 0.015762695811961984,
+        "vx_rmse_mps": 0.03169949416920553,
+        "vy_rmse_mps": 0.018835247177330594,
+        "wz_rmse_radps": 0.019254950088845982
+      },
+      "body": {
+        "height_mean_m": 0.4320668333501958,
+        "height_min_m": 0.4304809868335724,
+        "height_max_m": 0.43343546986579895,
+        "roll_rms_rad": 0.0027649282225306734,
+        "roll_max_abs_rad": 0.005833505676114896,
+        "pitch_rms_rad": 0.005694770665048381,
+        "pitch_max_abs_rad": 0.00827775143990533
+      },
+      "joints": {
+        "max_abs_velocity_radps": 3.2362325191497803,
+        "max_abs_effort_nm": 60.456748962402344,
+        "max_effort_limit_ratio": 0.668830320570204,
+        "saturation_threshold_fraction": 0.98,
+        "saturated_joint_samples": 0,
+        "effort_joint_samples": 2412,
+        "saturation_percent": 0.0
+      }
+    },
+    {
+      "phase": "pause_1",
+      "samples_total": 100,
+      "samples_steady": 51,
+      "steady_state_skip_s": 1.0,
+      "command": {
+        "vx_mps": 0.0,
+        "vy_mps": 0.0,
+        "wz_radps": 0.0
+      },
+      "tracking": {
+        "mean_actual_vx_mps": -0.0015368181502530135,
+        "mean_actual_vy_mps": -0.0003729337662947478,
+        "mean_actual_wz_radps": -0.0074744741432368755,
+        "vx_mae_mps": 0.0015722854671848302,
+        "vy_mae_mps": 0.0003926629292525867,
+        "wz_mae_radps": 0.0074744741432368755,
+        "vx_rmse_mps": 0.002442834189743986,
+        "vy_rmse_mps": 0.0006015775070938593,
+        "wz_rmse_radps": 0.00802918003617706
+      },
+      "body": {
+        "height_mean_m": 0.45277001051341786,
+        "height_min_m": 0.4526674747467041,
+        "height_max_m": 0.4528949558734894,
+        "roll_rms_rad": 0.007719562068371471,
+        "roll_max_abs_rad": 0.008266393524445734,
+        "pitch_rms_rad": 0.006265987335987046,
+        "pitch_max_abs_rad": 0.007244648696882648
+      },
+      "joints": {
+        "max_abs_velocity_radps": 0.013766796328127384,
+        "max_abs_effort_nm": 29.28989028930664,
+        "max_effort_limit_ratio": 0.411616939968533,
+        "saturation_threshold_fraction": 0.98,
+        "saturated_joint_samples": 0,
+        "effort_joint_samples": 612,
+        "saturation_percent": 0.0
+      }
+    },
+    {
+      "phase": "backward",
+      "samples_total": 250,
+      "samples_steady": 201,
+      "steady_state_skip_s": 1.0,
+      "command": {
+        "vx_mps": -0.5,
+        "vy_mps": 0.0,
+        "wz_radps": 0.0
+      },
+      "tracking": {
+        "mean_actual_vx_mps": -0.4761233323842139,
+        "mean_actual_vy_mps": 0.0014160344118990273,
+        "mean_actual_wz_radps": 0.005940360699431908,
+        "vx_mae_mps": 0.024068399448299884,
+        "vy_mae_mps": 0.0120887540855511,
+        "wz_mae_radps": 0.02527156356424273,
+        "vx_rmse_mps": 0.027347436426496445,
+        "vy_rmse_mps": 0.014469732290239377,
+        "wz_rmse_radps": 0.03245541663162537
+      },
+      "body": {
+        "height_mean_m": 0.4304512455985321,
+        "height_min_m": 0.4277493953704834,
+        "height_max_m": 0.43193089962005615,
+        "roll_rms_rad": 0.010288958991520825,
+        "roll_max_abs_rad": 0.018960067052261543,
+        "pitch_rms_rad": 0.006646333651149815,
+        "pitch_max_abs_rad": 0.010785222945573698
+      },
+      "joints": {
+        "max_abs_velocity_radps": 3.200012445449829,
+        "max_abs_effort_nm": 62.3978271484375,
+        "max_effort_limit_ratio": 0.7625724792480468,
+        "saturation_threshold_fraction": 0.98,
+        "saturated_joint_samples": 0,
+        "effort_joint_samples": 2412,
+        "saturation_percent": 0.0
+      }
+    },
+    {
+      "phase": "pause_2",
+      "samples_total": 100,
+      "samples_steady": 51,
+      "steady_state_skip_s": 1.0,
+      "command": {
+        "vx_mps": 0.0,
+        "vy_mps": 0.0,
+        "wz_radps": 0.0
+      },
+      "tracking": {
+        "mean_actual_vx_mps": 0.0033242473368505564,
+        "mean_actual_vy_mps": 0.0006570268765333857,
+        "mean_actual_wz_radps": 0.0010972362901085551,
+        "vx_mae_mps": 0.0033242473368505564,
+        "vy_mae_mps": 0.0006570268765333857,
+        "wz_mae_radps": 0.0011151049392020807,
+        "vx_rmse_mps": 0.00466577541709955,
+        "vy_rmse_mps": 0.0007911877943126451,
+        "wz_rmse_radps": 0.0015030823469824714
+      },
+      "body": {
+        "height_mean_m": 0.45316463066082374,
+        "height_min_m": 0.452335387468338,
+        "height_max_m": 0.453464150428772,
+        "roll_rms_rad": 0.0023673096919656395,
+        "roll_max_abs_rad": 0.0023833212158300425,
+        "pitch_rms_rad": 0.007633625166745516,
+        "pitch_max_abs_rad": 0.009211376957156361
+      },
+      "joints": {
+        "max_abs_velocity_radps": 0.028306957334280014,
+        "max_abs_effort_nm": 27.816162109375,
+        "max_effort_limit_ratio": 0.34924632178412546,
+        "saturation_threshold_fraction": 0.98,
+        "saturated_joint_samples": 0,
+        "effort_joint_samples": 612,
+        "saturation_percent": 0.0
+      }
+    },
+    {
+      "phase": "left",
+      "samples_total": 250,
+      "samples_steady": 201,
+      "steady_state_skip_s": 1.0,
+      "command": {
+        "vx_mps": 0.0,
+        "vy_mps": 0.3,
+        "wz_radps": 0.0
+      },
+      "tracking": {
+        "mean_actual_vx_mps": -0.006080522430731697,
+        "mean_actual_vy_mps": 0.24750205659451177,
+        "mean_actual_wz_radps": 0.012308000903666386,
+        "vx_mae_mps": 0.020128697726240763,
+        "vy_mae_mps": 0.052497943405488225,
+        "wz_mae_radps": 0.022587941946541144,
+        "vx_rmse_mps": 0.02218239002804812,
+        "vy_rmse_mps": 0.05374259261485936,
+        "wz_rmse_radps": 0.03406942867384763
+      },
+      "body": {
+        "height_mean_m": 0.4529899041451032,
+        "height_min_m": 0.451302707195282,
+        "height_max_m": 0.4540524482727051,
+        "roll_rms_rad": 0.011945813467993156,
+        "roll_max_abs_rad": 0.016999047017506944,
+        "pitch_rms_rad": 0.006061109362898189,
+        "pitch_max_abs_rad": 0.008265766171043881
+      },
+      "joints": {
+        "max_abs_velocity_radps": 1.7691367864608765,
+        "max_abs_effort_nm": 51.53535079956055,
+        "max_effort_limit_ratio": 0.6792955610487196,
+        "saturation_threshold_fraction": 0.98,
+        "saturated_joint_samples": 0,
+        "effort_joint_samples": 2412,
+        "saturation_percent": 0.0
+      }
+    },
+    {
+      "phase": "pause_3",
+      "samples_total": 100,
+      "samples_steady": 51,
+      "steady_state_skip_s": 1.0,
+      "command": {
+        "vx_mps": 0.0,
+        "vy_mps": 0.0,
+        "wz_radps": 0.0
+      },
+      "tracking": {
+        "mean_actual_vx_mps": -0.0014831664145686756,
+        "mean_actual_vy_mps": -0.0003394703526282683,
+        "mean_actual_wz_radps": 0.0038967703619752735,
+        "vx_mae_mps": 0.0014831664145686756,
+        "vy_mae_mps": 0.0003394703526282683,
+        "wz_mae_radps": 0.0038967703619752735,
+        "vx_rmse_mps": 0.0016543251408520927,
+        "vy_rmse_mps": 0.0003969105448595663,
+        "wz_rmse_radps": 0.004526247858295839
+      },
+      "body": {
+        "height_mean_m": 0.4538104528305577,
+        "height_min_m": 0.45379239320755005,
+        "height_max_m": 0.4538719058036804,
+        "roll_rms_rad": 0.0038828361430069892,
+        "roll_max_abs_rad": 0.003918770804047248,
+        "pitch_rms_rad": 0.004970269735538539,
+        "pitch_max_abs_rad": 0.00564678701139022
+      },
+      "joints": {
+        "max_abs_velocity_radps": 0.008914078585803509,
+        "max_abs_effort_nm": 24.22740364074707,
+        "max_effort_limit_ratio": 0.39505941602918837,
+        "saturation_threshold_fraction": 0.98,
+        "saturated_joint_samples": 0,
+        "effort_joint_samples": 612,
+        "saturation_percent": 0.0
+      }
+    },
+    {
+      "phase": "right",
+      "samples_total": 250,
+      "samples_steady": 201,
+      "steady_state_skip_s": 1.0,
+      "command": {
+        "vx_mps": 0.0,
+        "vy_mps": -0.3,
+        "wz_radps": 0.0
+      },
+      "tracking": {
+        "mean_actual_vx_mps": 0.006463599466575097,
+        "mean_actual_vy_mps": -0.266467817609583,
+        "mean_actual_wz_radps": -0.01010752262801583,
+        "vx_mae_mps": 0.014491923169038301,
+        "vy_mae_mps": 0.03450721308070035,
+        "wz_mae_radps": 0.022392692966071024,
+        "vx_rmse_mps": 0.01612765159385668,
+        "vy_rmse_mps": 0.0375582385412086,
+        "wz_rmse_radps": 0.030065825445645324
+      },
+      "body": {
+        "height_mean_m": 0.45710225766571005,
+        "height_min_m": 0.45617926120758057,
+        "height_max_m": 0.4582754373550415,
+        "roll_rms_rad": 0.019084430331760466,
+        "roll_max_abs_rad": 0.024821543753571623,
+        "pitch_rms_rad": 0.016509597542770864,
+        "pitch_max_abs_rad": 0.018360337486160516
+      },
+      "joints": {
+        "max_abs_velocity_radps": 1.713983178138733,
+        "max_abs_effort_nm": 51.27088165283203,
+        "max_effort_limit_ratio": 0.6221744113498264,
+        "saturation_threshold_fraction": 0.98,
+        "saturated_joint_samples": 0,
+        "effort_joint_samples": 2412,
+        "saturation_percent": 0.0
+      }
+    },
+    {
+      "phase": "pause_4",
+      "samples_total": 100,
+      "samples_steady": 51,
+      "steady_state_skip_s": 1.0,
+      "command": {
+        "vx_mps": 0.0,
+        "vy_mps": 0.0,
+        "wz_radps": 0.0
+      },
+      "tracking": {
+        "mean_actual_vx_mps": -0.0010121673639885414,
+        "mean_actual_vy_mps": -0.00036888195808940365,
+        "mean_actual_wz_radps": -0.0015101223777723954,
+        "vx_mae_mps": 0.0010121673639885414,
+        "vy_mae_mps": 0.00036888195808940365,
+        "wz_mae_radps": 0.0015101223777723954,
+        "vx_rmse_mps": 0.0013775657316538901,
+        "vy_rmse_mps": 0.0003792953144490992,
+        "wz_rmse_radps": 0.0015583203127608474
+      },
+      "body": {
+        "height_mean_m": 0.4520520860073613,
+        "height_min_m": 0.45195940136909485,
+        "height_max_m": 0.45231494307518005,
+        "roll_rms_rad": 0.005497934863543422,
+        "roll_max_abs_rad": 0.005571702576600465,
+        "pitch_rms_rad": 0.001210600329600665,
+        "pitch_max_abs_rad": 0.0013495450648195056
+      },
+      "joints": {
+        "max_abs_velocity_radps": 0.006431935355067253,
+        "max_abs_effort_nm": 27.29766273498535,
+        "max_effort_limit_ratio": 0.42245568169487846,
+        "saturation_threshold_fraction": 0.98,
+        "saturated_joint_samples": 0,
+        "effort_joint_samples": 612,
+        "saturation_percent": 0.0
+      }
+    },
+    {
+      "phase": "yaw_left",
+      "samples_total": 250,
+      "samples_steady": 201,
+      "steady_state_skip_s": 1.0,
+      "command": {
+        "vx_mps": 0.0,
+        "vy_mps": 0.0,
+        "wz_radps": 0.5
+      },
+      "tracking": {
+        "mean_actual_vx_mps": -0.013271074156527087,
+        "mean_actual_vy_mps": -0.011184710789754505,
+        "mean_actual_wz_radps": 0.29359631733366504,
+        "vx_mae_mps": 0.01775994044855997,
+        "vy_mae_mps": 0.018934492099988483,
+        "wz_mae_radps": 0.20907870709747817,
+        "vx_rmse_mps": 0.021060650728202505,
+        "vy_rmse_mps": 0.02249518260371942,
+        "wz_rmse_radps": 0.229193633913629
+      },
+      "body": {
+        "height_mean_m": 0.4510078525068748,
+        "height_min_m": 0.44485074281692505,
+        "height_max_m": 0.4552367031574249,
+        "roll_rms_rad": 0.010356922157795328,
+        "roll_max_abs_rad": 0.019925546468434262,
+        "pitch_rms_rad": 0.015070866673921912,
+        "pitch_max_abs_rad": 0.024957999708409593
+      },
+      "joints": {
+        "max_abs_velocity_radps": 1.7144365310668945,
+        "max_abs_effort_nm": 46.676029205322266,
+        "max_effort_limit_ratio": 0.7626575046115451,
+        "saturation_threshold_fraction": 0.98,
+        "saturated_joint_samples": 0,
+        "effort_joint_samples": 2412,
+        "saturation_percent": 0.0
+      }
+    },
+    {
+      "phase": "pause_5",
+      "samples_total": 100,
+      "samples_steady": 51,
+      "steady_state_skip_s": 1.0,
+      "command": {
+        "vx_mps": 0.0,
+        "vy_mps": 0.0,
+        "wz_radps": 0.0
+      },
+      "tracking": {
+        "mean_actual_vx_mps": 0.001717071552240454,
+        "mean_actual_vy_mps": -0.002461774692432407,
+        "mean_actual_wz_radps": -0.030237230125303362,
+        "vx_mae_mps": 0.001717071552240454,
+        "vy_mae_mps": 0.002461774692432407,
+        "wz_mae_radps": 0.030237230125303362,
+        "vx_rmse_mps": 0.0017658132936276343,
+        "vy_rmse_mps": 0.002750389369206974,
+        "wz_rmse_radps": 0.033711242912893964
+      },
+      "body": {
+        "height_mean_m": 0.45475111288182873,
+        "height_min_m": 0.454562783241272,
+        "height_max_m": 0.455057829618454,
+        "roll_rms_rad": 0.0014943919071098036,
+        "roll_max_abs_rad": 0.0023434779898010103,
+        "pitch_rms_rad": 0.004584534919361045,
+        "pitch_max_abs_rad": 0.006570619289054065
+      },
+      "joints": {
+        "max_abs_velocity_radps": 0.04458478093147278,
+        "max_abs_effort_nm": 27.032913208007812,
+        "max_effort_limit_ratio": 0.2714037789238824,
+        "saturation_threshold_fraction": 0.98,
+        "saturated_joint_samples": 0,
+        "effort_joint_samples": 612,
+        "saturation_percent": 0.0
+      }
+    },
+    {
+      "phase": "yaw_right",
+      "samples_total": 250,
+      "samples_steady": 201,
+      "steady_state_skip_s": 1.0,
+      "command": {
+        "vx_mps": 0.0,
+        "vy_mps": 0.0,
+        "wz_radps": -0.5
+      },
+      "tracking": {
+        "mean_actual_vx_mps": 0.025164119755636104,
+        "mean_actual_vy_mps": -0.008135287528417412,
+        "mean_actual_wz_radps": -0.2879727152894385,
+        "vx_mae_mps": 0.025964789785240864,
+        "vy_mae_mps": 0.0211305622543111,
+        "wz_mae_radps": 0.21206094146664464,
+        "vx_rmse_mps": 0.030371875452971292,
+        "vy_rmse_mps": 0.027441746722777372,
+        "wz_rmse_radps": 0.2443643615877043
+      },
+      "body": {
+        "height_mean_m": 0.4441102516295305,
+        "height_min_m": 0.4387555420398712,
+        "height_max_m": 0.4465494155883789,
+        "roll_rms_rad": 0.004270325641280697,
+        "roll_max_abs_rad": 0.011513443150488351,
+        "pitch_rms_rad": 0.0036278563529325686,
+        "pitch_max_abs_rad": 0.009550545439166103
+      },
+      "joints": {
+        "max_abs_velocity_radps": 1.9190150499343872,
+        "max_abs_effort_nm": 45.64414978027344,
+        "max_effort_limit_ratio": 0.7631008572048611,
+        "saturation_threshold_fraction": 0.98,
+        "saturated_joint_samples": 0,
+        "effort_joint_samples": 2412,
+        "saturation_percent": 0.0
+      }
+    },
+    {
+      "phase": "pause_6",
+      "samples_total": 100,
+      "samples_steady": 51,
+      "steady_state_skip_s": 1.0,
+      "command": {
+        "vx_mps": 0.0,
+        "vy_mps": 0.0,
+        "wz_radps": 0.0
+      },
+      "tracking": {
+        "mean_actual_vx_mps": -0.004971485461711007,
+        "mean_actual_vy_mps": 0.00033546325864210983,
+        "mean_actual_wz_radps": 0.022282911866318946,
+        "vx_mae_mps": 0.004971485461711007,
+        "vy_mae_mps": 0.001308439653988827,
+        "wz_mae_radps": 0.022282911866318946,
+        "vx_rmse_mps": 0.00594688816278256,
+        "vy_rmse_mps": 0.0014447753175811317,
+        "wz_rmse_radps": 0.02453631060506019
+      },
+      "body": {
+        "height_mean_m": 0.4575824521335901,
+        "height_min_m": 0.4572507441043854,
+        "height_max_m": 0.45795363187789917,
+        "roll_rms_rad": 0.01147155819126759,
+        "roll_max_abs_rad": 0.011894866550632975,
+        "pitch_rms_rad": 0.0037233509301563606,
+        "pitch_max_abs_rad": 0.004440921368941521
+      },
+      "joints": {
+        "max_abs_velocity_radps": 0.042561616748571396,
+        "max_abs_effort_nm": 30.4022216796875,
+        "max_effort_limit_ratio": 0.26436714504076086,
+        "saturation_threshold_fraction": 0.98,
+        "saturated_joint_samples": 0,
+        "effort_joint_samples": 612,
+        "saturation_percent": 0.0
+      }
+    },
+    {
+      "phase": "combined",
+      "samples_total": 350,
+      "samples_steady": 301,
+      "steady_state_skip_s": 1.0,
+      "command": {
+        "vx_mps": 0.4,
+        "vy_mps": 0.2,
+        "wz_radps": 0.3
+      },
+      "tracking": {
+        "mean_actual_vx_mps": 0.3693752514563526,
+        "mean_actual_vy_mps": 0.17996660964037492,
+        "mean_actual_wz_radps": 0.3028931129117345,
+        "vx_mae_mps": 0.03062474854364746,
+        "vy_mae_mps": 0.021411024870666564,
+        "wz_mae_radps": 0.03047269815424352,
+        "vx_rmse_mps": 0.03540492257648353,
+        "vy_rmse_mps": 0.026853261701613354,
+        "wz_rmse_radps": 0.03746047754865187
+      },
+      "body": {
+        "height_mean_m": 0.439223723752158,
+        "height_min_m": 0.4371001720428467,
+        "height_max_m": 0.4406318664550781,
+        "roll_rms_rad": 0.0033501059934744034,
+        "roll_max_abs_rad": 0.007668280863161301,
+        "pitch_rms_rad": 0.002116348989690223,
+        "pitch_max_abs_rad": 0.004281471229254559
+      },
+      "joints": {
+        "max_abs_velocity_radps": 2.806556463241577,
+        "max_abs_effort_nm": 68.46414184570312,
+        "max_effort_limit_ratio": 0.7055716620551216,
+        "saturation_threshold_fraction": 0.98,
+        "saturated_joint_samples": 0,
+        "effort_joint_samples": 3612,
+        "saturation_percent": 0.0
+      }
+    },
+    {
+      "phase": "stand_final",
+      "samples_total": 250,
+      "samples_steady": 201,
+      "steady_state_skip_s": 1.0,
+      "command": {
+        "vx_mps": 0.0,
+        "vy_mps": 0.0,
+        "wz_radps": 0.0
+      },
+      "tracking": {
+        "mean_actual_vx_mps": -0.000652678567230984,
+        "mean_actual_vy_mps": -8.306616716856017e-05,
+        "mean_actual_wz_radps": 0.00034939117985281634,
+        "vx_mae_mps": 0.000652678567230984,
+        "vy_mae_mps": 0.0002210424527808542,
+        "wz_mae_radps": 0.0019704681864542673,
+        "vx_rmse_mps": 0.0006783188770415692,
+        "vy_rmse_mps": 0.0002422289186018279,
+        "wz_rmse_radps": 0.0028430399612862207
+      },
+      "body": {
+        "height_mean_m": 0.4537621285784897,
+        "height_min_m": 0.453462153673172,
+        "height_max_m": 0.45378705859184265,
+        "roll_rms_rad": 0.0002881871617197447,
+        "roll_max_abs_rad": 0.00046491033432911975,
+        "pitch_rms_rad": 0.00045401700161227306,
+        "pitch_max_abs_rad": 0.0011713524319339787
+      },
+      "joints": {
+        "max_abs_velocity_radps": 0.012663254514336586,
+        "max_abs_effort_nm": 21.606319427490234,
+        "max_effort_limit_ratio": 0.4801404317220052,
+        "saturation_threshold_fraction": 0.98,
+        "saturated_joint_samples": 0,
+        "effort_joint_samples": 2412,
+        "saturation_percent": 0.0
+      }
+    }
+  ]
+}
