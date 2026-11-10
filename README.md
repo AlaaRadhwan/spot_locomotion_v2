@@ -11,6 +11,14 @@ Rigid-body modeling, actuator characterization and PPO velocity-tracking trainin
 
 > Simulation only. Nothing here has been run on physical hardware, and the actuator gains and limits are engineering choices for this model, not Boston Dynamics values.
 
+## Demo
+
+**Learned Locomotion in MuJoCo**
+
+Spot quadruped following velocity commands using the robust PPO locomotion policy (`model_600`).
+
+https://github.com/user-attachments/assets/2805c88b-5de7-4c93-b0c1-1f824065602b
+
 ## Validated baseline
 
 | Item | Value |
