@@ -11,8 +11,6 @@ Rigid-body modeling, actuator characterization and PPO velocity-tracking trainin
 
 > Simulation only. Nothing here has been run on physical hardware, and the actuator gains and limits are engineering choices for this model, not Boston Dynamics values.
 
-> **Branch note.** The V3 implementation lives on `feat/spot-v3-rl-env`; `master` currently holds the earlier V2 work.
-
 ## Validated baseline
 
 | Item | Value |
