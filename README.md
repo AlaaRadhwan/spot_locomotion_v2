@@ -1,12 +1,17 @@
 # Spot Quadruped Locomotion: MuJoCo / MjLab Modeling and PPO Training
 
-Rigid-body modeling, actuator characterization and PPO velocity-tracking training for a Spot-like quadruped, built on [MjLab](https://github.com/mujocolab/mjlab) 1.5.3 (MuJoCo, RSL-RL). The trained policy is deployed to ROS 2 / Gazebo and used with SLAM and Nav2 in the companion repository
-[`spot_ros2_ws`](https://github.com/AlaaRadhwan/spot_ros2_ws), which is the main end-to-end presentation of the project.
+Rigid-body modeling, actuator characterization and PPO velocity-tracking training for a Spot-like quadruped, built on [MjLab](https://github.com/mujocolab/mjlab) 1.5.3 (MuJoCo, RSL-RL). The trained policy is deployed to ROS 2 / Gazebo and used with SLAM and Nav2 in the companion repository [`spot_ros2_ws`](https://github.com/AlaaRadhwan/spot_ros2_ws), which has the **[demo videos](https://github.com/AlaaRadhwan/spot_ros2_ws#demo)** and the end-to-end overview.
 
-> **Scope.** Simulation only. Nothing here has been run on physical hardware, and the actuator gains and limits
-> are engineering choices for this model, not claimed Boston Dynamics values.
+**What this repository covers**
 
-> **Branch note.** The V3 implementation lives on `feat/spot-v3-rl-env`. `master` currently holds the earlier V2 work.
+- **Actuator modeling:** choosing and validating a PD actuator before any RL, with step-response, push-recovery and joint-dynamics studies.
+- **Robot model:** a 31.6 kg Spot-like MuJoCo model, generated and audited by scripts.
+- **PPO training:** velocity-tracking tasks in MjLab, including a robust command distribution that is the deployed policy.
+- **Export:** TorchScript/ONNX export used by the ROS 2 deployment.
+
+> Simulation only. Nothing here has been run on physical hardware, and the actuator gains and limits are engineering choices for this model, not Boston Dynamics values.
+
+> **Branch note.** The V3 implementation lives on `feat/spot-v3-rl-env`; `master` currently holds the earlier V2 work.
 
 ## Validated baseline
 
@@ -20,9 +25,7 @@ Rigid-body modeling, actuator characterization and PPO velocity-tracking trainin
 | Command distribution | vx ±0.65, vy ±0.40, wz ±0.60; 10 % standing; mixed forward / lateral / yaw categories |
 | Exported policy | `exported/spot_v3_robust_model_600/` (metadata tracked; `.pt`/`.onnx` binaries are gitignored and shipped in the ROS repository) |
 
-**Provenance.** The `model_600` run saved its resolved configuration in `logs/.../params/env.yaml` (local, gitignored); it matches the robust configuration committed in `59dc5c2`. The run's recorded git commit, `a5cefd5`, did not yet track `flat_env_cfg_v3_robust.py`, so exact source reproducibility is **not** claimed from that commit. The `agent.yaml` of that run records `max_iterations: 2000`; the committed runner config says 10 000, and `model_600` is the checkpoint that was exported.
-
-An untested forward-only command curriculum is kept separately on the branch `exp/forward-only-curriculum`. It is not part of the baseline and no saved run uses it.
+**Provenance.** The run's saved configuration (`logs/.../params/env.yaml`, local) matches the robust config committed in `59dc5c2`. The commit the run recorded, `a5cefd5`, did not yet track `flat_env_cfg_v3_robust.py`, so exact reproduction from that commit is not claimed. The run's `agent.yaml` says `max_iterations: 2000`, the committed runner config says 10 000, and `model_600` is the checkpoint that was exported. An untested forward-only command curriculum is kept on the branch `exp/forward-only-curriculum` and is not part of the baseline.
 
 ## Model and environment
 
@@ -49,8 +52,6 @@ Note that `reports/` mixes V2-era studies (e.g. Kp = 500 / Kd = 10 sweeps) with 
 
 Requires Python ≥ 3.13 and [uv](https://docs.astral.sh/uv/); `uv.lock` pins `mjlab==1.5.3`. Training was run on a CUDA GPU (4096 environments).
 
-Verified from the source: the `train`/`play` entry points and their options (`train <TASK> --help`), and the example invocations in the tool scripts' docstrings.
-
 ```bash
 uv sync
 uv run list-envs                      # should list the Spot tasks
@@ -65,16 +66,15 @@ uv run python tools/export_spot_v3_policy.py \
     --output-dir exported/spot_v3_robust_model_600
 ```
 
-Not re-run for this documentation (no training or simulation was launched while preparing it), so treat the commands as source-derived rather than freshly tested.
+The commands come from the entry points and script docstrings; training was not re-run for this documentation.
 
 **Known limitation.** `tools/benchmark_spot_v3_mujoco.py` has `TASK_ID` hard-coded to the non-robust `Mjlab-Velocity-Flat-Spot-V3` (while `export_spot_v3_policy.py` is hard-coded to the robust task), so the benchmark cannot be pointed at `model_600` without a code change.
 
 ## Evaluation evidence and its limits
 
-- **MuJoCo benchmark (baseline `model_550`, not `model_600`):** `benchmark_runs/mujoco/spot_v3_mujoco_eval_20260910_111210/` (`summary.json`, `samples.csv`). The same scripted 59 s command sequence was run in Gazebo; the tracking-error table for both simulators ("Sim-to-sim results") is in the [ROS repository README](https://github.com/AlaaRadhwan/spot_ros2_ws). Discussion: [`FINDS/Spot_Locomotion_V3_Sim2Sim_Benchmark_Findings.md`](FINDS/Spot_Locomotion_V3_Sim2Sim_Benchmark_Findings.md).
-- Single run per simulator, one seed, no confidence intervals.
-- **No quantitative evaluation exists yet for the robust `model_600`** (neither MuJoCo nor Gazebo), and none for rough terrain or perturbation robustness beyond the actuator push-recovery tests.
-- Training logs (TensorBoard events, checkpoints, videos) are local and gitignored. Demo media: *not yet recorded* (placeholder).
+- **MuJoCo benchmark (baseline `model_550`, not `model_600`):** `benchmark_runs/mujoco/spot_v3_mujoco_eval_20260910_111210/`. The same scripted command sequence was run in Gazebo; the comparison table is in the [ROS repository's benchmark note](https://github.com/AlaaRadhwan/spot_ros2_ws/blob/main/docs/sim2sim_benchmark_model_550.md). Discussion: [`FINDS/Spot_Locomotion_V3_Sim2Sim_Benchmark_Findings.md`](FINDS/Spot_Locomotion_V3_Sim2Sim_Benchmark_Findings.md).
+- One run per simulator, one seed. There is **no quantitative evaluation yet for the robust `model_600`**, and none for rough terrain or perturbation robustness beyond the actuator push-recovery tests.
+- Training logs and checkpoints are local and gitignored. The deployed policy running in Gazebo is shown in the [ROS repository demo](https://github.com/AlaaRadhwan/spot_ros2_ws#demo).
 
 ## Repository layout
 
